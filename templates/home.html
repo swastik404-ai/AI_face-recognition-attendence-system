@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,6 +94,7 @@
     .main-content {
       margin-left: 300px;
       transition: margin-left 0.3s ease;
+      padding: 40px;
     }
 
     .hero-section {
@@ -116,10 +118,6 @@
       gap: 25px;
     }
 
-    .card a {
-      text-decoration: none;
-    }
-
     .card {
       background: #fff;
       border: 1px solid #d9d9d9;
@@ -130,8 +128,11 @@
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
+    .card a {
+      text-decoration: none;
+    }
+
     .card:hover {
-      background: #fff;
       transform: translateY(-5px) scale(1.05);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
@@ -151,6 +152,11 @@
       line-height: normal;
     }
 
+    .icon-img {
+      max-width: 100%;
+      height: auto;
+    }
+
     footer {
       align-items: center;
       font-size: 0.9em;
@@ -161,6 +167,7 @@
       justify-content: center;
       background-color: #fff;
       padding: 15px 0;
+      margin-top: auto;
     }
 
     footer a {
@@ -270,7 +277,7 @@
         <div class="card">
           <a href="{% url 'student-list' %}">
             <div class="box-img">
-              <img src="images/students.svg" alt="Students" class="icon-img" width="150" />
+              <img src="{% static 'images/students.svg' %}" alt="Students" class="icon-img" width="150" />
             </div>
             <p>Total Students: {{ total_students }}</p>
           </a>
@@ -279,7 +286,7 @@
         <div class="card">
           <a href="{% url 'student_attendance_list' %}">
             <div class="box-img">
-              <img src="images/records.svg" alt="Attendance Records" class="icon-img" width="120" />
+              <img src="{% static 'images/records.svg' %}" alt="Attendance Records" class="icon-img" width="120" />
             </div>
             <p>Total Attendance Records: {{ total_attendance }}</p>
           </a>
@@ -288,7 +295,7 @@
         <div class="card">
           <a href="{% url 'student_attendance_list' %}">
             <div class="box-img">
-              <img src="images/Checkin.svg" alt="Checkin" class="icon-img" width="120" />
+              <img src="{% static 'images/Checkin.svg' %}" alt="Checkin" class="icon-img" width="120" />
             </div>
             <p>Total Check-Ins: {{ total_check_ins }}</p>
           </a>
@@ -297,7 +304,7 @@
         <div class="card">
           <a href="{% url 'student_attendance_list' %}">
             <div class="box-img">
-              <img src="images/Checkout.svg" alt="Checkout" class="icon-img" width="120" />
+              <img src="{% static 'images/Checkout.svg' %}" alt="Checkout" class="icon-img" width="120" />
             </div>
             <p>Total Check-Outs: {{ total_check_outs }}</p>
           </a>
@@ -306,7 +313,7 @@
         <div class="card">
           <a href="{% url 'camera_config_list' %}">
             <div class="box-img">
-              <img src="images/cameras.svg" alt="Cameras" class="icon-img" width="120" />
+              <img src="{% static 'images/cameras.svg' %}" alt="Cameras" class="icon-img" width="120" />
             </div>
             <p>Total Cameras: {{ total_cameras }}</p>
           </a>
